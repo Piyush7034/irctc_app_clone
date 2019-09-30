@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irctc_app_clone/options_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -83,7 +84,13 @@ class _LoginPageState extends State<LoginPage> {
                   height: height * 0.05,
                 ),
                 RaisedButton(
-                  onPressed: null,
+                  onPressed: () {
+                    if (pin.toString().length > 0)
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => OptionsPage()),
+                      );
+                  },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0)),
                   color: Colors.blue,
